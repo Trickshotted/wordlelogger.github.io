@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WordleLogger</title>
+        <link rel="icon" href="https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png" sizes="32x32">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb.js"></script>
+        <script src="accountHandler.js"></script>
+        <script src="redirectHandler.js"></script>
+        <style>
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+
+@keyframes slideInFromTop{
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft{
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+            html,body{
+                font-family: "Roboto";
+                background-color: #121213;
+                color: #d7dadc;
+    
+            }
+
+            .button{
+                margin-bottom: 10px;
+                border: none;
+                font-family: "Roboto";
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: #6aaa64;
+                padding: 10px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                color: #d7dadc;
+                animation: 1s ease-out 0s 1 slideInFromTop;
+            }
+
+            .button:hover{
+                background-color: #538d43;
+            }
+
+            .body{
+                position: absolute;
+                text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+
+            }
+
+            h1{
+                font-size: 40px;
+                animation: 1s ease-out 0s 1 slideInFromTop;
+            }
+
+            p{
+
+                animation: 1s ease-out 0s 1 slideInFromTop;
+            }
+
+            .userInfoDiv{
+                position: fixed;
+	            top: 0;
+	            left: 0;
+                padding: 15px;
+                background-color: #272729;
+                margin-left: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                z-index: 999;
+                animation: 1s ease-out 0s 1 slideInFromLeft;
+            }
+            .logOutButton{
+
+                margin-top: 10px;
+                border: none;
+                font-family: "Roboto";
+                font-size: 13px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: #6aaa64;
+                padding: 10px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                color: #d7dadc;
+                width: 100%;
+            }
+
+
+        </style>
+    </head>
+    <body  onload="checkLoggedIn()">
+        <div class="userInfoDiv">
+            <label id="loggedIn">Getting user info...</label>
+        </div>
+        <div class="body">
+        <h1>WordleLogger</h1>
+        <p>The most revolutionary Wordle software.</p><br>
+        <button class="button" onclick="redirect('login.html')">Log In</button><br>
+        <button class="button" onclick="redirect('signup.html')">Sign Up</button><br>
+        </div>
+    </body>
+</html>
